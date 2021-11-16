@@ -11,10 +11,10 @@ import axios from 'axios';
 
 const TeamsTable = (props) => {
     let pagesOptions=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
-    // teeams=axios.get('https://www.balldontlie.io/api/v1/teams').then((response)=>response.data.data);
-    let count=axios.get('https://www.balldontlie.io/api/v1/teams').then((response)=>response.data.meta.total_count);
+    // let teeams=axios.get('https://www.balldontlie.io/api/v1/teams').then((response)=>response.data.data);
+    // let count=axios.get('https://www.balldontlie.io/api/v1/teams').then((response)=>response.data.meta.total_count);
     // console.log(teeams);
-    console.log(count);
+    //  console.log(count);
     // console.log("------------------");
     let result = [
         {
@@ -36,7 +36,7 @@ const TeamsTable = (props) => {
             conference: 6
         },
     ]
-    const [page, setPage] = React.useState(2);
+    const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
     const handleChangePage = (event, newPage) => {
@@ -45,7 +45,7 @@ const TeamsTable = (props) => {
 
     const handleChangeRowsPerPage = (event) => {
         setRowsPerPage(parseInt(event.target.value, 10));
-        setPage(1);//0
+        setPage(0);//0
     };
 
 
@@ -61,7 +61,7 @@ const TeamsTable = (props) => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {result
+                    {props.teams
                         .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                         .map(t => (
                             <TableRow key={t.full_name}>
@@ -76,7 +76,7 @@ const TeamsTable = (props) => {
             <TablePagination
                 rowsPerPageOptions={pagesOptions}
                 component="div"
-                count={count}//{props.teamsCount}
+                count={props.teamsCount}
                 page={page}
                 onPageChange={handleChangePage}
                 rowsPerPage={rowsPerPage}

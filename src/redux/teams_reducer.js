@@ -11,13 +11,11 @@ let initialState = {
 const teamsReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_TEAMS:
-            debugger;
             return {
                 ...state,
                 teams: action.teams
             }
         case SET_TEAMS_COUNT:
-            debugger;
             return {
                 ...state,
                 teamsCount: action.count
@@ -27,23 +25,19 @@ const teamsReducer = (state = initialState, action) => {
     }
 }
 
-export const setTeams = (teams) => {debugger;
-    return { type: SET_TEAMS, teams} }
+export const setTeams = (teams) => ({ type: SET_TEAMS, teams} )
 export const setTeamsCount = (teamsCount) => ({ type: SET_TEAMS_COUNT, count: teamsCount })
 
 export const getTeams = () => {
     return (dispatch) => {
-        debugger;
-        teamsAPI.getTeams().then(data => {
-            dispatch(setTeams(data));
+        teamsAPI.getTeams().then(data => {dispatch(setTeams(data.data));
         });
     }
 }
 
 export const getTeamsCount = () => {
     return (dispatch) => {
-        teamsAPI.getTeamsCount().then(data => {
-            dispatch(setTeamsCount(data.total_count));
+        teamsAPI.getTeamsCount().then(data => {dispatch(setTeamsCount(data.meta.total_count));
         });
     }
 }
