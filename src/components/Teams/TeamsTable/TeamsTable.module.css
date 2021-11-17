@@ -1,4 +1,36 @@
-.mainRow{
+.mainRow {
    background-color: #ede6fb;
-   border-radius: 10px;
+}
+
+.mainRow a {
+   color: #1D0053;
+}
+
+.mainCell {
+   font-size: 120%;
+   font-weight: bolder;
+}
+
+.nameCell {
+   font-weight: bold;
+}
+
+.redBadge {
+   background-color: #FFEAE3;
+   color: #E64A18;
+   font-weight: bold;
+   padding: 10px;
+   width: 40px;
+   border-radius: 20px;
+   text-transform: uppercase;
+}
+
+.greenBadge {
+   background-color: #DAF5EE;
+   color: #1FAD87;
+   font-weight: bold;
+   padding: 10px;
+   width: 40px;
+   border-radius: 20px;
+   text-transform: uppercase;
 }

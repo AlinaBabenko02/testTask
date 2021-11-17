@@ -26,20 +26,20 @@ const playersReducer = (state = initialState, action) => {
 }
 
 export const setPlayers = (players) => ({ type: SET_PLAYERS, players })
-export const setPlayersCount = (teamsCount) => ({ type: SET_PLAYERS_COUNT, count: playersCount })
+export const setPlayersCount = (playersCount) => ({ type: SET_PLAYERS_COUNT, count: playersCount })
 
 export const getPlayers = () => {
     return (dispatch) => {
         playersAPI.getPlayers().then(data => {
-            dispatch(setPlayers(data));
+            dispatch(setPlayers(data.data));
         });
     }
 }
 
-export const getTeamsCount = () => {
+export const getPlayersCount = () => {
     return (dispatch) => {
         playersAPI.getPlayersCount().then(data => {
-            dispatch(setPlayersCount(data.total_count));
+            dispatch(setPlayersCount(data.meta.total_count));
         });
     }
 

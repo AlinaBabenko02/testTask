@@ -1,14 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import TeamsContainer from './components/Teams/TeamsContainer';
+import Teams from './components/Teams/Teams';
 import PlayersContainer from './components/Players/PlayersContainer';
 
 function App() {
   return (
     <div className="App">
-      <h1>NBA profile</h1>
-      <TeamsContainer />
+      <h1>NBA profile 
+        <a className="alina"> made by Alina Babenko</a>
+      </h1>
+      <Teams />
       <PlayersContainer />
     </div>
   );

@@ -9,22 +9,20 @@ class TeamsTableContainer extends React.Component {
         this.props.getTeamsCount();
     }
 
-    onPageChanged = () => {
-        this.props.getTeams();
-        this.props.getTeamsCount();
-    }
     render() {
         return <TeamsTable teams={this.props.teams}
-        teamsCount={this.props.teamsCount}
-                             />
+            teamsCount={this.props.teamsCount}
+            myTeams={this.props.myTeams}
+        />
     }
 }
 
 let mapStateToProps = (state) => {
     return {
         teams: state.teamsBlock.teams,
-        teamsCount: state.teamsBlock.teamsCount
+        teamsCount: state.teamsBlock.teamsCount,
+        myTeams: state.teamsBlock.myTeams
     };
 }
 
-export default connect(mapStateToProps, { getTeams, getTeamsCount})(TeamsTableContainer);
+export default connect(mapStateToProps, { getTeams, getTeamsCount })(TeamsTableContainer);
