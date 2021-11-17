@@ -1,0 +1,44 @@
+.myForm {
+    box-shadow: 0 0 10px;
+    border-radius: 20px;
+    height: 90px;
+    margin: 20px;
+    padding: 10px 20px;
+}
+
+.input {
+    height: 40px;
+    width: 190px;
+    border-radius: 5px;
+    border-color: #BDBDBD;
+    margin: 0 20px 0 0;
+    float: left;
+}
+
+.select {
+    height: 45px;
+    width: 180px;
+    border-radius: 5px;
+    border-color: #BDBDBD;
+    margin: 0 20px 20px 0;
+    float: left;
+}
+
+.button {
+    margin: 20px 30px;
+    height: 50px;
+    width: 180px;
+    border-radius: 5px;
+    background-color: #652AD3;
+    color: white;
+    font-weight: bolder;
+    font-size: 110%;
+}
+
+.error {
+    border-color: red;
+}
+
+p.error {
+    color: red;
+}
